@@ -23,8 +23,8 @@
         <!-- Build properties -->
         <maven.version>3.3.9</maven.version>
         <java.version>1.8</java.version>
-        <node.version>v12.16.1</node.version>
-        <npm.version>6.14.5</npm.version>
+        <node.version>v14.15.1</node.version>
+        <npm.version>6.14.10</npm.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <project.testresult.directory>${project.build.directory}/test-results</project.testresult.directory>
@@ -680,10 +680,10 @@
                         <changeLogFile>${project.basedir}/src/main/resources/config/liquibase/master.xml</changeLogFile>
                         <diffChangeLogFile>${project.basedir}/src/main/resources/config/liquibase/changelog/${maven.build.timestamp}_changelog.xml</diffChangeLogFile>
                         <driver>org.postgresql.Driver</driver>
-                        <url>jdbc:postgresql://localhost:5432/studentsMngmt</url>
+                        <url>jdbc:postgresql://localhost:5432/students</url>
                         <defaultSchemaName></defaultSchemaName>
-                        <username>studentsMngmt</username>
-                        <password></password>
+                        <username>postgres</username>
+                        <password>postgres</password>
                         <referenceUrl>hibernate:spring:com.domain?dialect=io.github.jhipster.domain.util.FixedPostgreSQL10Dialect&amp;hibernate.physical_naming_strategy=org.springframework.boot.orm.jpa.hibernate.SpringPhysicalNamingStrategy&amp;hibernate.implicit_naming_strategy=org.springframework.boot.orm.jpa.hibernate.SpringImplicitNamingStrategy</referenceUrl>
                         <verbose>true</verbose>
                         <logging>debug</logging>

@@ -1,0 +1,24 @@
+{
+  "studentsMngmtApp": {
+    "semestre": {
+      "home": {
+        "title": "Semestres",
+        "createLabel": "Créer un nouveau Semestre",
+        "createOrEditLabel": "Créer ou éditer un Semestre",
+        "notFound": "Aucun Semestre trouvé"
+      },
+      "created": "Un nouveau Semestre a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Semestre avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Semestre avec l'identifiant {{ param }} a été supprimé",
+      "delete": {
+        "question": "Etes-vous certain de vouloir supprimer le Semestre {{ id }} ?"
+      },
+      "detail": {
+        "title": "Semestre"
+      },
+      "nom": "Nom",
+      "dateDebut": "Date Debut",
+      "dateFin": "Date Fin"
+    }
+  }
+}

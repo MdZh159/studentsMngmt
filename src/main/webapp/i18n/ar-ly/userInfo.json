@@ -1,0 +1,27 @@
+{
+  "studentsMngmtApp": {
+    "userInfo": {
+      "home": {
+        "title": "User Infos",
+        "createLabel": "Create a new User Info",
+        "createOrEditLabel": "Create or edit a User Info",
+        "notFound": "No User Infos found"
+      },
+      "created": "A new User Info is created with identifier {{ param }}",
+      "updated": "A User Info is updated with identifier {{ param }}",
+      "deleted": "A User Info is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete User Info {{ id }}?"
+      },
+      "detail": {
+        "title": "User Info"
+      },
+      "phone": "Phone",
+      "adresse": "Adresse",
+      "ville": "Ville",
+      "age": "Age",
+      "fonction": "Fonction",
+      "user": "User"
+    }
+  }
+}

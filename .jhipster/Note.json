@@ -1,0 +1,41 @@
+{
+  "name": "Note",
+  "fields": [
+    {
+      "fieldName": "noteGrade",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "remarque",
+      "fieldType": "String"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "module",
+      "otherEntityRelationshipName": "note",
+      "relationshipName": "module",
+      "otherEntityField": "nom",
+      "ownerSide": true
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "user",
+      "otherEntityRelationshipName": "note",
+      "relationshipName": "user",
+      "otherEntityField": "login"
+    }
+  ],
+  "changelogDate": "20210129164747",
+  "entityTableName": "note",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}

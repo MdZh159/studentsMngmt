@@ -1,0 +1,73 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="studentsMngmtApp.note.home.title">Notes</span>
+
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-note" [routerLink]="['/note/new']">
+            <fa-icon icon="plus"></fa-icon>
+            <span  jhiTranslate="studentsMngmtApp.note.home.createLabel">
+            Create a new Note
+            </span>
+        </button>
+    </h2>
+
+    <jhi-alert-error></jhi-alert-error>
+
+    <jhi-alert></jhi-alert>
+
+    <div class="alert alert-warning" id="no-result" *ngIf="notes?.length === 0">
+        <span jhiTranslate="studentsMngmtApp.note.home.notFound">No notes found</span>
+    </div>
+
+    <div class="table-responsive" id="entities" *ngIf="notes && notes.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+                <tr>
+                    <th scope="col" ><span jhiTranslate="global.field.id">ID</span></th>
+                    <th scope="col" ><span jhiTranslate="studentsMngmtApp.note.noteGrade">Note Grade</span></th>
+                    <th scope="col" ><span jhiTranslate="studentsMngmtApp.note.remarque">Remarque</span></th>
+                    <th scope="col" ><span jhiTranslate="studentsMngmtApp.note.module">Module</span></th>
+                    <th scope="col" ><span jhiTranslate="studentsMngmtApp.note.user">User</span></th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let note of notes ;trackBy: trackId">
+                    <td><a [routerLink]="['/note', note.id, 'view']">{{ note.id }}</a></td>
+                    <td>{{ note.noteGrade }}</td>
+                    <td>{{ note.remarque }}</td>
+                    <td>
+                        <div *ngIf="note.module">
+                            <a [routerLink]="['/module', note.module?.id, 'view']" >{{ note.module?.nom }}</a>
+                        </div>
+                    </td>
+                    <td>
+                        {{ note.user?.login }}
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group">
+                            <button type="submit"
+                                    [routerLink]="['/note', note.id, 'view']"
+                                    class="btn btn-info btn-sm">
+                                <fa-icon icon="eye"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                            </button>
+
+                            <button type="submit"
+                                    [routerLink]="['/note', note.id, 'edit']"
+                                    class="btn btn-primary btn-sm">
+                                <fa-icon icon="pencil-alt"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                            </button>
+
+                            <button type="submit" (click)="delete(note)"
+                                    class="btn btn-danger btn-sm">
+                                <fa-icon icon="times"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

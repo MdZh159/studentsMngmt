@@ -1,0 +1,52 @@
+{
+  "name": "Module",
+  "fields": [
+    {
+      "fieldName": "nom",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "prefixe",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "description",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "dateDebut",
+      "fieldType": "LocalDate"
+    },
+    {
+      "fieldName": "dateFin",
+      "fieldType": "LocalDate"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "filiere",
+      "otherEntityRelationshipName": "module",
+      "relationshipName": "filiere",
+      "otherEntityField": "nom"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "semestre",
+      "otherEntityRelationshipName": "module",
+      "relationshipName": "semestre",
+      "otherEntityField": "nom"
+    }
+  ],
+  "changelogDate": "20210129164447",
+  "entityTableName": "module",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}

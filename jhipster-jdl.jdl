@@ -1,0 +1,76 @@
+
+entity Departement {
+	nom String,
+    prefixe String,
+    description String
+}
+
+entity Filiere {
+	nom String,
+    prefixe String,
+    description String
+}
+
+entity Module {
+	nom String,
+    prefixe String,
+    description String,
+    dateDebut LocalDate,
+    dateFin LocalDate
+}
+
+entity Cours {
+	nom String,
+    description String,
+    nbHeures Integer,
+    dateDebut LocalDate,
+    dateFin LocalDate
+}
+// an ignored comment
+/** not an ignored comment */
+entity Semestre {
+	nom String,
+    dateDebut LocalDate,
+    dateFin LocalDate
+    
+}
+
+entity Note {
+	noteGrade Integer,
+    remarque String
+}
+
+
+entity Absence {
+    dateDebut LocalDate,
+    dateFin LocalDate,
+    justification String
+}
+
+entity UserInfo {
+  phone String,
+  adresse String,
+  ville String,
+  age Integer,
+  fonction String
+}
+
+
+relationship ManyToOne {
+	Filiere{departement(nom)} to Departement,
+    Module{filiere(nom)} to Filiere,
+    Cours{module(nom)} to Module,
+    Module{semestre(nom)} to Semestre,
+    Note{user(login)} to User,
+    Absence{user(login)} to User
+    
+}
+
+// defining multiple oneToOne relationships
+relationship OneToOne {
+    Note{module(nom)} to Module,
+    Absence{cours(nom)} to Cours,
+    UserInfo{user(login)} to User
+}
+
+
